@@ -14,7 +14,7 @@ export default function Currency() {
 	React.useEffect(() => {
 		// TODO: Move to api folder
 		// "proxy": "https://api.hnb.hr"
-		fetch("https://api.hnb.hr/tecajn/v1")
+		fetch("/tecajn/v1")
 			.then(response => response.json())
 			.then(result => setCurrencies(result));
 
