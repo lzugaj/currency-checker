@@ -18,7 +18,7 @@ jobs:
       - name: Deploy to Heroku
         uses: akhileshns/heroku-deploy@v3.12.12
         with:
-          heroku_api_key: ${{ secrets.HEROKU_TOKEN }}
-          heroku_app_name: "currency-checker-web"
-          heroku_email: "luka.zugaj7@gmail.com"
-          remote_branch: develop
+          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+          heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
+          heroku_email: ${{ secrets.HEROKU_EMAIL }}
+          branch: develop
