@@ -4,19 +4,24 @@ on:
     branches:
       - develop
 jobs:
-  release:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - name: Development Code
+        uses: actions/checkout@v2
+
+      - name: Use Node.js 17.x
+        uses: actions/setup-node@v1
         with:
-          fetch-depth: 0
-      - name: login
-        uses: actions/heroku@master
-        env:
-          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+          node-version: 17.x
+      - run: npm install
+      - run: npm run build --if-present
+
+      - name: Deploy to Heroku
+      - run : actions/checkout@v2
+      - run : akhileshns/heroku-deploy@v3.12.12
         with:
-          args: container:login
-      - name: set remote
-        run: git remote set-url origin https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/{{ secrets.HEROKU_API_NAME }}.git
-      - name: push and deploy
-        run: git push origin HEAD:master -f
+          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+          heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
+          heroku_email: ${{ secrets.HEROKU_EMAIL }}
+          branch: develop
