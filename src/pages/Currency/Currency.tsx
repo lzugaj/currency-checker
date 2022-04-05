@@ -12,6 +12,10 @@ export default function Currency() {
 	const [ currencies, setCurrencies ] = useState<CurrencyResponse[]>([]);
 
 	React.useEffect(() => {
+<<<<<<< HEAD
+=======
+		// TODO: Move to api folder
+>>>>>>> f10f43807cc94e940b9f9bb8a0abbb58e3281ede
 		fetch("/tecajn/v1")
 			.then(response => response.json())
 			.then(result => setCurrencies(result));
