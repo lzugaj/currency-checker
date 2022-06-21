@@ -7,5 +7,5 @@ export type CurrencyResponse = {
 	"Jedinica": number,
 	"Kupovni za devize": string,
 	"Srednji za devize": string,
-	"Prodajni za devize": string
+	"Prodajni za devize": string,
 }
