@@ -1,9 +1,9 @@
 type ReactEnv = {
-    REACT_APP_GATEWAY_BASE_URL: string;
+  REACT_APP_GATEWAY_BASE_URL: string;
 };
 
 interface ReactWindow extends Window {
-    REACT_ENV: ReactEnv;
+  REACT_ENV: ReactEnv;
 }
 
 declare let window: ReactWindow;
@@ -15,7 +15,7 @@ let env = window.REACT_ENV;
 }*/
 
 env = {
-    REACT_APP_GATEWAY_BASE_URL: "https://api.hnb.hr/tecajn",
+  REACT_APP_GATEWAY_BASE_URL: "https://api.hnb.hr/tecajn",
 };
 
 export default env;

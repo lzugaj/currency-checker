@@ -1,36 +1,25 @@
 import React from "react";
 
-type CardProps = {
-	exchangeRateNumber: string;
-	dateOfApplication: string;
-	country: string;
-	unit: number;
-	purchaseForForeignExchange: string;
-	mediumForForeignExchange: string;
-	foreignExchangeSales: string;
-	currency: string;
-	currencyCode: string;
-}
+import { CurrencyResponse } from "../api/types";
+import { CurrencyValueType } from "../enums/types";
 
-export default function Card({ ...props }: CardProps) {
-	return (
-		<div className="flex justify-center">
-			<div className="block w-full p-5 m-1 rounded-lg shadow-lg bg-white max-w-md mb-2">
-				<p className="text-xl mb-2 font-bold">
-					{ `${ props.country } (${ props.currency })` }
-				</p>
-				<div>
-					<div>
-						{ `Kupovni za devize: ${ props.purchaseForForeignExchange }` }
-					</div>
-					<div>
-						{ `Srednji za devize: ${ props.mediumForForeignExchange }` }
-					</div>
-					<div>
-						{ `Prodajni za devize: ${ props.foreignExchangeSales }` }
-					</div>
-				</div>
-			</div>
-		</div>
-	);
+type CardProps = {
+  data: CurrencyResponse;
+};
+
+export default function Card({ data }: CardProps) {
+  return (
+    <div className="flex justify-center">
+      <div className="hover:animate-pulse block w-full p-5 m-2 rounded-lg shadow-lg bg-white max-w-md">
+        <p className="text-xl mb-2 font-bold">{`${data[CurrencyValueType.COUNTRY]} (${
+          data[CurrencyValueType.CURRENCY]
+        })`}</p>
+        <div>
+          <div>{`Kupovni za devize: ${data[CurrencyValueType.PURCHASE_FOR_FOREIGN_EXCHANGE]}`}</div>
+          <div>{`Srednji za devize: ${data[CurrencyValueType.MEDIUM_FOR_FOREIGN_EXCHANGE]}`}</div>
+          <div>{`Prodajni za devize: ${data[CurrencyValueType.FOREIGN_EXCHANGE_SALES]}`}</div>
+        </div>
+      </div>
+    </div>
+  );
 }
