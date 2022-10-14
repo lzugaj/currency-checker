@@ -96,44 +96,36 @@ export default function Currency() {
         />
       </div>
       {showDisplay && (
-        <div className={`${showDisplay} justify-center text-center pt-2 m-2`}>
+        <div className="justify-center text-center pt-2 m-2">
           <div className="border-2 rounded-md border-black p-5">
             <div className="flex flex-row justify-center">
-              <div>
-                <Dropdown
-                  selectedValue={firstCurrency}
-                  currencies={currencies}
-                  disabled={disabledDropdown}
-                  onChanged={(event) => showFirstCurrencyValue(event.target.value)}
-                />
-              </div>
-              <div>
-                <Button
-                  text={firstButtonSign}
-                  className={`bg-blue-500 text-white font-bold py-1 px-3 rounded-full ml-2 mr-2 ${firstButtonVisibility}`}
-                  onClick={handleNewDropdown}
-                />
-              </div>
+              <Dropdown
+                selectedValue={firstCurrency}
+                currencies={currencies}
+                disabled={disabledDropdown}
+                onChanged={(event) => showFirstCurrencyValue(event.target.value)}
+              />
+              <Button
+                text={firstButtonSign}
+                className={`bg-blue-500 text-white font-bold py-1 px-3 rounded-full ml-2 mr-2 ${firstButtonVisibility}`}
+                onClick={handleNewDropdown}
+              />
             </div>
             {firstButtonSign === ButtonSignType.MINUS && (
               <div className="flex flex-row justify-center mt-2">
-                <div>
-                  {showDropdown && (
-                    <Dropdown
-                      selectedValue={secondCurrency}
-                      currencies={currencies}
-                      disabled={disabledDropdown}
-                      onChanged={(event) => showSecondCurrencyValue(event.target.value)}
-                    />
-                  )}
-                </div>
-                <div>
-                  <Button
-                    text={secondButtonSign}
-                    className={`bg-blue-500 text-white font-bold py-1 px-3 rounded-full ml-2 mr-2 ${secondButtonVisibility}`}
-                    onClick={handleNewDropdown}
+                {showDropdown && (
+                  <Dropdown
+                    selectedValue={secondCurrency}
+                    currencies={currencies}
+                    disabled={disabledDropdown}
+                    onChanged={(event) => showSecondCurrencyValue(event.target.value)}
                   />
-                </div>
+                )}
+                <Button
+                  text={secondButtonSign}
+                  className={`bg-blue-500 text-white font-bold py-1 px-3 rounded-full ml-2 mr-2 ${secondButtonVisibility}`}
+                  onClick={handleNewDropdown}
+                />
               </div>
             )}
             {showReset ? (
