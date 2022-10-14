@@ -84,7 +84,8 @@ export default function Currency() {
     <Container>
       <div className="flex justify-center p-5 mb-5">
         <p className="text-[20px] text-black">
-          Tečajna lista na datum: <span className="underline font-bold"> {getCurrentDate()} </span>
+          Tečajna lista na datum:
+          <span className="underline font-bold"> {getCurrentDate()} </span>
         </p>
       </div>
       <div className="flex justify-center p-2">
