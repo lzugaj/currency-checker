@@ -6,7 +6,7 @@ This application pulls data from service [HNB API](http://api.hnb.hr/).
 
 ## Technologies used in the project
 * React JS
-* Typescript
+* TypeScript
 * TailwindCSS
 * ESlint
 * Prettier
