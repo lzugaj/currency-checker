@@ -7,5 +7,5 @@ export function getCurrentDate() {
 }
 
 function formatter(givenNumber: number) {
-  return givenNumber > 10 ? givenNumber : `0${givenNumber}`;
+  return givenNumber >= 10 ? givenNumber : `0${givenNumber}`;
 }

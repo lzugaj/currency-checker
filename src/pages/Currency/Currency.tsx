@@ -91,7 +91,7 @@ export default function Currency() {
       <div className="flex justify-center p-2">
         <Button
           text={OtherSignType.DOLLAR}
-          className="animate-bounce transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+          className="animate-bounce transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-full"
           onClick={() => setShowDisplay(!showDisplay)}
         />
       </div>
@@ -107,7 +107,7 @@ export default function Currency() {
               />
               <Button
                 text={firstButtonSign}
-                className={`bg-blue-500 text-white font-bold py-1 px-3 rounded-full ml-2 mr-2 ${firstButtonVisibility}`}
+                className={`bg-blue-500 text-white font-bold py-2 px-4 rounded-full ml-2 mr-2 ${firstButtonVisibility}`}
                 onClick={handleNewDropdown}
               />
             </div>
@@ -123,7 +123,7 @@ export default function Currency() {
                 )}
                 <Button
                   text={secondButtonSign}
-                  className={`bg-blue-500 text-white font-bold py-1 px-3 rounded-full ml-2 mr-2 ${secondButtonVisibility}`}
+                  className={`bg-blue-500 text-white font-bold py-2 px-4 rounded-full ml-2 mr-2 ${secondButtonVisibility}`}
                   onClick={handleNewDropdown}
                 />
               </div>
@@ -132,7 +132,7 @@ export default function Currency() {
               <div className="mt-4">
                 <Button
                   text="Reset"
-                  className="bg-blue-500 text-white font-bold p-1 px-3 rounded-full ml-2"
+                  className="bg-blue-500 text-white font-bold p-3 px-5 rounded-full ml-2"
                   onClick={fetchAllCurrencies}
                 />
               </div>
@@ -140,7 +140,7 @@ export default function Currency() {
               <div className="mt-4">
                 <Button
                   text="Dohvati"
-                  className="bg-blue-500 text-white font-bold p-1 px-3 rounded-full ml-2"
+                  className="bg-blue-500 text-white font-bold p-3 px-5 rounded-full ml-2"
                   onClick={handleDataForSelectedCurrency}
                 />
               </div>
